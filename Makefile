@@ -15,7 +15,8 @@ endif
 
 TAG ?= $(VARNISH_VER_MINOR)
 
-REPO = wodby/varnish
+IMAGE_NAME ?= r6digital/varnish
+REPO = $(IMAGE_NAME)
 NAME = varnish-$(VARNISH_VER_MINOR)
 
 ifneq ($(STABILITY_TAG),)
