@@ -133,6 +133,17 @@ RUN set -ex; \
         make check; \
     fi; \
     \
+    export PKG_CONFIG_PATH=/usr/lib/pkgconfig; \
+    export ACLOCAL_PATH=/usr/share/aclocal; \
+    libvmod_dynamic_ver="6.0"; \
+    libvmod_dynamic_url="https://github.com/nigoroll/libvmod-dynamic/archive/refs/heads/${libvmod_dynamic_ver}.tar.gz"; \
+    wget -qO- "${libvmod_dynamic_url}" | tar xz -C /tmp/; \
+    cd /tmp/libvmod-dynamic-*; \
+    ./autogen.sh; \
+    ./configure; \
+    make; \
+    make install; \
+    \
     # we're using 6.0 branch instead of releases https://github.com/varnish/varnish-modules/issues/144
     git clone --depth 1 -b 6.0 --single-branch https://github.com/varnish/varnish-modules /tmp/varnish-modules; \
     cd /tmp/varnish-modules; \

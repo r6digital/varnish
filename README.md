@@ -59,6 +59,7 @@ Supported tags and respective `Dockerfile` links:
 | `VARNISH_CACHE_STATIC_FILES`               |                            |                                                 |
 | `VARNISH_CONFIG_PRESET`                    |                            |                                                 |
 | `VARNISH_DEFAULT_TTL`                      | `120s`                     |                                                 |
+| `VARNISH_DNS_TTL`                          | `10s`                      | TTL for dynamic backend hostnames               |
 | `VARNISH_ERRORS_GRACE`                     | `15s`                      |                                                 |
 | `VARNISH_PURGE_EXTERNAL_REQUEST_HEADER`    |                            |                                                 |
 | `VARNISH_KEEP_ALL_COOKIES`                 |                            |                                                 |
