@@ -18,6 +18,9 @@ env:
 jobs:
   varnish-60:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
     steps:
     - uses: actions/checkout@v2
     - uses: docker/setup-qemu-action@v1
