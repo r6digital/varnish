@@ -1,7 +1,9 @@
 # Varnish Docker Container Image
 
 > **Note**
-> R6 Digital fork. Includes `vmod-dynamic` and uses it for the default backend.
+> **R6 Digital fork.** 
+> Includes `vmod-dynamic` and uses it for the default backend.  
+> **Does not** include the "extended resolver functionality" of `vmod-dynamic` as `getdns` is not available in the version of Alpine Linux used in this image.
 
 [![Build Status](https://github.com/wodby/varnish/workflows/Build%20docker%20image/badge.svg)](https://github.com/wodby/varnish/actions)
 [![Docker Pulls](https://img.shields.io/docker/pulls/wodby/varnish.svg)](https://hub.docker.com/r/wodby/varnish)
