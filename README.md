@@ -1,5 +1,8 @@
 # Varnish Docker Container Image
 
+> **Note**
+> R6 Digital fork. Includes `vmod-dynamic` and uses it for the default backend.
+
 [![Build Status](https://github.com/wodby/varnish/workflows/Build%20docker%20image/badge.svg)](https://github.com/wodby/varnish/actions)
 [![Docker Pulls](https://img.shields.io/docker/pulls/wodby/varnish.svg)](https://hub.docker.com/r/wodby/varnish)
 [![Docker Stars](https://img.shields.io/docker/stars/wodby/varnish.svg)](https://hub.docker.com/r/wodby/varnish)
@@ -193,6 +196,7 @@ VARNISH_STORAGE_CONDITION='beresp.http.x-cache-bin = "secondary"'
 | [tcp](https://github.com/varnish/varnish-modules/blob/master/docs/vmod_tcp.rst)             | latest  |          |
 | [var](https://github.com/varnish/varnish-modules/blob/master/docs/vmod_var.rst)             | latest  |          |
 | [xkey](https://github.com/varnish/varnish-modules/blob/master/docs/vmod_xkey.rst)           | latest  |          |
+| [dynamic](https://github.com/nigoroll/libvmod-dynamic/)                                     | 6.0     |          |
 | bodyaccess                                                                                  | latest  |          |
 
 Modules can be imported as `$VARNISH_IMPORT_MODULES=xkey,softpurge`.
