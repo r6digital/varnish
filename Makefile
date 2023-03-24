@@ -50,7 +50,7 @@ buildx-build:
 	    ./
 
 buildx-push:
-	docker buildx build --push --platform $(PLATFORM) -t $(REPO):$(TAG) \
+	docker buildx build --push --platform $(PLATFORM) -t $(DOCKER_REGISTRY)/$(REPO):$(TAG) \
 	    --build-arg BASE_IMAGE_TAG=$(BASE_IMAGE_TAG) \
 	    --build-arg VARNISH_VER=$(VARNISH_VER) \
 	    ./
@@ -61,7 +61,7 @@ test:
 	cd ./tests/wordpress && IMAGE=$(REPO):$(TAG) ./run.sh
 
 push:
-	docker push $(REPO):$(TAG)
+	docker push $(DOCKER_REGISTRY)/$(REPO):$(TAG)
 
 shell:
 	docker run --rm --name $(NAME) -i -t $(PORTS) $(VOLUMES) $(ENV) $(REPO):$(TAG) /bin/bash
